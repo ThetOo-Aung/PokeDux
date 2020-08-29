@@ -1,0 +1,23 @@
+
+.poke {
+  width: 90%;
+  margin: auto;
+}
+
+.pokemon-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pokemon-wrapper .item {
+  width: 30%;
+}
+hr {
+  border: 1px solid black;
+}
+.pokemon-name {
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  color: rgb(255, 124, 1);
+}

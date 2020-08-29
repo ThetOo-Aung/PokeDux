@@ -1,0 +1,35 @@
+/* .page-active {
+  background-color: blue;
+} */
+
+.page-link-class {
+  outline: none;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}
+.page-link-class:hover,
+.page-link-class:focus {
+  color: white;
+  padding: 10px;
+  /* border: 1px solid red; */
+  background-color: rgb(235, 133, 133);
+  outline: none;
+  text-decoration: none;
+}
+.pagination {
+  width: 500px;
+  display: flex;
+  margin: auto;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.btnEdit:focus,
+.btnEdit:active {
+  outline: none !important;
+  border: none;
+  box-shadow: none !important;
+}
