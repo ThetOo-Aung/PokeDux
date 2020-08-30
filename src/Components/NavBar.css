@@ -3,5 +3,11 @@
   font-weight: 700;
   font-size: 30px;
   text-shadow: 2px 3px #000000;
-
+  color: yellow;
+}
+.navbar-brand:hover {
+  color: yellow !important;
+}
+Link {
+  color: white !important;
 }

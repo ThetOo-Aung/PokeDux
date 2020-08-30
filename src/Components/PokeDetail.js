@@ -4,6 +4,7 @@ import { GetPokemon } from "../actions/PokemonListAction";
 import "./PokeDetail.css";
 import Stats from "./PokeDetails/Stats";
 import Abilities from "./PokeDetails/Abilities";
+import Types from "./PokeDetails/Types";
 
 const PokeDetail = (props) => {
   const pokemonName = props.match.params.pokemon;
@@ -44,6 +45,10 @@ const PokeDetail = (props) => {
               <img src={pokeData.sprites.back_shiny} alt={""} />
             )}
           </div>
+
+          <Types  pokeData={pokeData}></Types>
+
+          
           <div className="item ">
             <Stats pokeData={pokeData}></Stats>
           </div>

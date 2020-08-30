@@ -1,12 +1,11 @@
 const initialState = {
-  data: {
-    
-  },
+  data: {},
+  stats: {},
+  types: [],
   isLoading: true,
-  errorMsg: "", 
-  sprites: {
-
-  }
+  errorMsg: "",
+  id: '',
+  sprites: {},
 };
 
 const PokemonReducer = (state = initialState, action) => {
@@ -25,15 +24,12 @@ const PokemonReducer = (state = initialState, action) => {
           ...state.data,
           [action.pokemonName]: {
             abilities: action.payload.abilities,
-            stats: action.payload.stats,
-            sprites: action.payload.sprites,
-            types: action.payload.types,
           },
         },
-        sprites: {
-          ...state.sprites,
-          [action.pokemonName]:action.Sprites
-        }
+        stats: action.stats,
+        types: action.types,
+        id: action.id,
+      
       };
     case "POKEMON_FAIL":
       return {

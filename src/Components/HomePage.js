@@ -5,14 +5,15 @@ import "./HomePage.css";
 import PokeList from "./PokeList";
 import ReactPaginate from "react-paginate";
 
-const HomePage = () => {
+const HomePage = (props) => {
+
   const pokemonList = useSelector((state) => state.PokemonList);
   const dispatch = useDispatch();
 
   const fetchData = (page = 1) => {
     dispatch(getPokemonList(page));
   };
-
+  
   useEffect(() => {
     fetchData(1);
     // eslint-disable-next-line react-hooks/exhaustive-deps

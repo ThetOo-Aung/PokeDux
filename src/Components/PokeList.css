@@ -37,7 +37,6 @@
 .PokeList .sprite-div {
   width: 95% !important;
   margin-left: 2px !important;
-  height: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,3 +56,6 @@
   min-width: 158px;
   max-width: 158px;
 }
+
+
+

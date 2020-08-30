@@ -2,7 +2,7 @@ const InitialState = {
   isLoading: true,
   data: [],
   errorMsg: "",
-  // nameArr: [],
+ 
   count: 0,
 };
 
@@ -18,7 +18,7 @@ const PokemonListReducer = (state = InitialState, action) => {
         ...state,
         isLoading: false,
         data: action.payload.results,
-        // nameArr: action.names,
+        url: action.url,
         errorMsg: '',
         count: action.payload.count,
       };

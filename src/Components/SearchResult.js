@@ -1,50 +1,49 @@
 import React, { useEffect, useState } from "react";
-import "./PokeList.css";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { GetPokemon } from "../actions/PokemonListAction";
 import { Link } from "react-router-dom";
 
-const PokeList = ({ pokemon }) => {
-  // const [imageLoading, setImageLoading] = useState(true);
+const SearchResult = (props) => {
+  const name = props.match.params.pokemon;
+  const dispatch = useDispatch();
   const [imgError, setImgError] = useState(false);
 
-  const dispatch = useDispatch();
-  const url = pokemon.url;
-  const pokemonIndex = url.split("/")[url.split("/").length - 2];
+  const Pokemon = useSelector((state) => state.Pokemon);
+  const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${Pokemon.id}.png`;
 
-  const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonIndex}.png`;
+
 
   useEffect(() => {
-    dispatch(GetPokemon(pokemon.name));
+    dispatch(GetPokemon(name));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+
+
   return (
     <div className="PokeList pokemon-item col-2">
-      <div className="cards p-1 m-4 w-100 rounded">
+       <div className="cards p-1 m-4 w-100 rounded">
         <div className="textEdit text-center text-light titleEditor">
-          {pokemon.name}
+          {name}
         </div>
 
         <div className="sprite-div my-3 p-2  rounded">
-          {imgError ? (
+          { imgError ? (
             <div className="img filler-img">Unknown Data</div>
           ) : (
             <img
               src={imageUrl}
               alt={""}
               className="img"
-              // onLoad={() => setImageLoading(true)}
+             
               onError={() => setImgError(true)}
             />
           )}
-
-          {/* <div className="img filler-img">Unknown Data</div> */}
         </div>
 
         <Link
-          to={`/pokemon/${pokemon.name}`}
-          onClick={() => dispatch(GetPokemon(pokemon.name))}
+          to={`/pokemon/${name}`}
+          onClick={() => dispatch(GetPokemon(name))}
         >
           <button className="btn btn-sm btn-outline-danger text-center mt-2">
             View Details
@@ -55,4 +54,4 @@ const PokeList = ({ pokemon }) => {
   );
 };
 
-export default PokeList;
+export default SearchResult;

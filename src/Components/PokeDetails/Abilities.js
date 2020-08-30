@@ -1,17 +1,27 @@
-import React from 'react'
+import React from "react";
+import "./Abilities.css";
 
-const Abilities = ({pokeData}) => {
+const Abilities = ({ pokeData }) => {
+  console.log(pokeData);
   return (
     <div className="Abilities">
-      <h3> Abilities </h3>
-      <hr></hr>
-            {pokeData.abilities.map(el => {
-              return <p key={el.ability.name} className="text-secondary" style={{textTransform:"capitalize", fontWeight:"600"}}>
-                {el.ability.name}
+      
+      
+        {pokeData &&
+          pokeData.abilities.map((el) => {
+            return (
+              <p
+                key={el.ability.name}
+                className="text-success mb-1 mr-1"
+                style={{ textTransform: "capitalize", fontWeight: "500" }}
+              >
+                {el.ability.name}/
               </p>
-            })}
+            );
+          })}
+    
     </div>
-  )
-}
+  );
+};
 
-export default Abilities
+export default Abilities;
