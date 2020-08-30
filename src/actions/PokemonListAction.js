@@ -30,7 +30,7 @@ export const GetPokemon = (pokemon) => async (dispatch) => {
       type: "POKEMON_LOADING",
     });
     const res = await Axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-    const spritesImg = res.data.sprites.front_default;
+  
 
     let { hp, attack, defense, speed, specialAttack, specialDefense } = "";
     

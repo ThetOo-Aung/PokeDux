@@ -2,7 +2,7 @@ import React from "react";
 import "./Abilities.css";
 
 const Abilities = ({ pokeData }) => {
-  console.log(pokeData);
+  
   return (
     <div className="Abilities">
       
